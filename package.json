@@ -1,0 +1,36 @@
+{
+  "name": "delv_api",
+  "version": "1.0.0",
+  "description": "API for nearby stores delivery platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('Tests success');",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishekwl/Delv_API.git"
+  },
+  "keywords": [
+    "node",
+    "mongoose",
+    "express"
+  ],
+  "author": "abhishekwl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhishekwl/Delv_API/issues"
+  },
+  "homepage": "https://github.com/abhishekwl/Delv_API#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "mongoose": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
