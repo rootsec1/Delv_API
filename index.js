@@ -17,7 +17,7 @@ require('./app/routes/Customer')(app);
 require('./app/routes/Store')(app);
 require('./app/routes/Product')(app);
 require('./app/routes/Order')(app);
-mongoose.connect(config.DB_URI, { useNewUrlParser: true, useCreateIndex: true, }, err=>{
+mongoose.connect(config.DB_URI, { useNewUrlParser: true, useCreateIndex: true }, err=>{
     if(err) {
         console.log('[!DB] '+err);
         process.exit();

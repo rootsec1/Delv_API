@@ -22,13 +22,14 @@ exports.update = (req,res)=>{
 };
 
 exports.delete = (req,res)=>{
-    Order.findOneAndRemove(req.params.id, (error,data)=>sendResponse(error,data,req,res));
+    Order.findByIdAndRemove(req.params.id, (error,data)=>sendResponse(error,data,req,res));
 };
 
-function sendResponse(error, data, request, response) {
+function sendResponse(error, data=null, request, response) {
     console.log('[CUSTOMER] '+request.method+' '+request.url);
     if(error) {
         console.log('[!SERVER-ERR] '+error);
         response.status(200).json({ error });
-    } else response.status(200).json(data);
+    } else if(data==null) response.status(200).json({ error: 'No entries found' });
+    else response.status(200).json(data);
 }

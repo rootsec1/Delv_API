@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 
 const storeSchema = mongoose.Schema(
     {
-        store_uid: { type: String, required: true },
-        name: { type: String, required: true, text: true },
-        department: { type: String, required: true },
+        _id : { type: String, required: true },
+        name: { type: String, required: true, text: true, trim: true, index: true },
+        department: { type: String, required: true, trim: true, index: true },
         phone: { type: String, required: true },
         latitude: { type: Number, required: true },
         longitude: { type: Number, required: true },
+        images: { type: [String], required: false, default: [] },
         //DELIVERY
         delivery_service: { type: Boolean, required: true, default: false },
         delivery_distance_threshold: { type: Number, required: false, default: 3 },
